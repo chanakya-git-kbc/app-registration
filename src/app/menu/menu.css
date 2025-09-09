@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  /* pushes left and right apart */
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-left a,
+.nav-right a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.nav-left a.active,
+.nav-right a.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-right a {
+  margin-right: 0;
+}

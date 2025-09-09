@@ -1,11 +1,22 @@
 # AngularFrontend app installation
 
 ng new app-registration
-√ Which stylesheet format would you like to use? CSS             [ https://developer.mozilla.org/docs/Web/CSS
-          ]
-√ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
-√ Do you want to create a 'zoneless' application without zone.js? No
+
+
 √ Which AI tools do you want to configure with Angular best practices? https://angular.dev/ai/develop-with-ai None
+
+
+git remote add origin https://github.com/chanakya-git-kbc/app-registration
+git branch -M main
+git push -u origin main
+
+
+ng generate c app-registration
+ng generate c menu
+ng generate c home
+ng generate c about
+ng generate c login --standalone
+
 
 
 # AppRegistration
