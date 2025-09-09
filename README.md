@@ -1,3 +1,13 @@
+# AngularFrontend app installation
+
+ng new app-registration
+√ Which stylesheet format would you like to use? CSS             [ https://developer.mozilla.org/docs/Web/CSS
+          ]
+√ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+√ Do you want to create a 'zoneless' application without zone.js? No
+√ Which AI tools do you want to configure with Angular best practices? https://angular.dev/ai/develop-with-ai None
+
+
 # AppRegistration
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
