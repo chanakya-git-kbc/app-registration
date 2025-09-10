@@ -36,6 +36,24 @@ ng generate c about
 ```bash
 ng generate c login --standalone
 ```
+```bash
+git commit -m "feat(app): add Home, About, Registration routes with shared menu and login link"
+```
+```bash
+git add . 
+git commit -m "feat(common): move menu to common components folder"
+git push origin main    
+```
+```bash
+ng add @angular/material  
+npm install @angular/animations    
+```
+```bash
+ng g s services/registrationService  
+ng g s services/emailService  
+```
+
+
 
 # AppRegistration
 

@@ -1,3 +1,78 @@
-<div style="text-align:center; margin-top:50px;">
-    <h1>Welcome to App Registration</h1>
-</div>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="registration-form">
+    <h2 class="form-title">User Registration</h2>
+    <mat-form-field class="full-width">
+        <mat-label>First Name*</mat-label>
+        <input matInput formControlName="firstName" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Last Name*</mat-label>
+        <input matInput formControlName="lastName" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Date of Birth*</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Address Line 1*</mat-label>
+        <input matInput formControlName="address1" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Address Line 2</mat-label>
+        <input matInput formControlName="address2" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>City*</mat-label>
+        <input matInput formControlName="city" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Country*</mat-label>
+        <mat-select formControlName="country" [(value)]="selectedCountry">
+            @for (country of countries; track country.code) {
+            <mat-option [value]="country.code">{{ country.name }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    @if(selectedCountry){
+    <mat-form-field class="full-width">
+        <mat-label>State*</mat-label>
+        <mat-select formControlName="state" [value]="selectedState">
+            @for (state of states; track state.code) {
+            <mat-option [value]="state.code">{{ state.name }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+    }
+
+    <mat-form-field class="full-width">
+        <mat-label>Zip Code*</mat-label>
+        <input matInput formControlName="zip" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Email*</mat-label>
+        <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Password*</mat-label>
+        <input matInput type="password" formControlName="password" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Confirm Password*</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">
+        Register
+    </button>
+</form>
