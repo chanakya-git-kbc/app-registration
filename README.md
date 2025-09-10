@@ -1,5 +1,5 @@
 # AngularFrontend app installation
-app page view available: @ https://github.com/chanakya-git-kbc/app-registration/blob/main/public/register1.mp4
+app page view available: @ https://github.com/chanakya-git-kbc/app-registration/blob/main/public/ checkout register1.gif , register2.gif & register_submit.gif
 
 ```bash
 ng new app-registration
