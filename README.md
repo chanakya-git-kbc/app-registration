@@ -1,5 +1,5 @@
 # AngularFrontend app installation
-app page view available: @ <video controls src="https://github.com/chanakya-git-kbc/app-registration/blob/main/public/register1.mp4" title="register1.mp4"></video>
+app page view available: @ https://github.com/chanakya-git-kbc/app-registration/blob/main/public/register1.mp4
 
 ```bash
 ng new app-registration
