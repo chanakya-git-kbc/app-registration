@@ -1,23 +1,41 @@
 # AngularFrontend app installation
-
+```bash
 ng new app-registration
-
+```
 
 √ Which AI tools do you want to configure with Angular best practices? https://angular.dev/ai/develop-with-ai None
 
-
+```bash
 git remote add origin https://github.com/chanakya-git-kbc/app-registration
+```
+
+```bash
 git branch -M main
+```
+
+```bash
 git push -u origin main
+```
 
-
+```bash
 ng generate c app-registration
+```
+
+```bash
 ng generate c menu
+```
+
+```bash
 ng generate c home
+```
+
+```bash
 ng generate c about
+```
+
+```bash
 ng generate c login --standalone
-
-
+```
 
 # AppRegistration
 
