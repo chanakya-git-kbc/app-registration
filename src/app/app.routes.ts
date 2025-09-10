@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { AppRegistration } from './app-registration/app-registration';
-import { Home } from './home/home';
-import { About } from './about/about';
-import { Login } from './login/login';
+import { AppRegistration } from './feature/app-registration/app-registration';
+import { Home } from './feature/home/home';
+import { About } from './feature/about/about';
+import { Login } from './feature/login/login';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

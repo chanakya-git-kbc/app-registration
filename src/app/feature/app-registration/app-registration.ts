@@ -7,8 +7,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { RegistrationService } from '../services/registration-service';
+import { RegistrationService } from '../../services/registration-service';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { VerificationDialog } from '../../common/verification-dialog/verification-dialog';
 
 @Component({
   selector: 'app-registration',
@@ -21,7 +24,8 @@ import { HttpClient } from '@angular/common/http';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   templateUrl: './app-registration.html',
   styleUrl: './app-registration.css'
@@ -29,7 +33,9 @@ import { HttpClient } from '@angular/common/http';
 export class AppRegistration {
   constructor(private fb: FormBuilder,
     private registrationService: RegistrationService,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private dialog: MatDialog,
+    private router: Router) {
     this.formRegisterFields();
     this.http.get<Country[]>('countries.json').subscribe(data => {
       this.countries = data;
@@ -72,7 +78,11 @@ export class AppRegistration {
   onSubmit() {
     if (this.registrationForm.valid) {
       this.registrationService.registerUser(this.registrationForm.value).subscribe(() => {
-        alert('Registration successful! Please check your email for verification.');
+        const dialogRef = this.dialog.open(VerificationDialog);
+
+        dialogRef.afterClosed().subscribe(() => {
+          this.router.navigate(['/login']);
+        });
       });
     }
   }
