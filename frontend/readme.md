@@ -55,7 +55,19 @@ ng g s services/registrationService
 ng g s services/emailService  
 ```
 
+# move angular to frontend folder
 
+```powershell
+ng serve     
+PS \app-registration> Move-Item -Path package-lock.json -Destination frontend
+PS \app-registration> Move-Item -Path readme.md -Destination frontend        
+PS \app-registration> Move-Item -Path .gitignore -Destination frontend
+PS \app-registration> Move-Item -Path .angular -Destination frontend  
+PS \app-registration> Move-Item -Path public -Destination frontend  
+PS \app-registration> cd frontend
+PS \app-registration\frontend>npm install
+PS \app-registration\frontend>ng serve
+```
 
 # AppRegistration
 

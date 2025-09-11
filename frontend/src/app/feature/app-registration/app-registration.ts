@@ -7,11 +7,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { RegistrationService } from '../../../services/registration-service';
+import { RegistrationService } from '../../services/registration-service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { VerificationDialog } from '../../../common/verification-dialog/verification-dialog';
+import { VerificationDialog } from '../../common/verification-dialog/verification-dialog';
 
 @Component({
   selector: 'app-registration',
