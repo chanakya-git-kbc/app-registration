@@ -1,12 +1,26 @@
-<nav class="navbar">
-  <div class="nav-left">
-    <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
-    <a routerLink="/registration" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Registration</a>
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <button mat-icon-button (click)="sidenav.toggle()" class="menu-button" aria-label="Toggle menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="nav-left desktop-menu">
+    <a mat-button routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+    <a mat-button routerLink="/registration" routerLinkActive="active">Registration</a>
   </div>
-  <div class="nav-right">
-    <a routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      Login
-    </a>
+
+  <span class="spacer"></span>
+
+  <div class="nav-right desktop-menu">
+    <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
   </div>
-</nav>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" class="mobile-menu">
+    <a mat-list-item routerLink="/home" (click)="sidenav.close()">Home</a>
+    <a mat-list-item routerLink="/about" (click)="sidenav.close()">About</a>
+    <a mat-list-item routerLink="/registration" (click)="sidenav.close()">Registration</a>
+    <a mat-list-item routerLink="/login" (click)="sidenav.close()">Login</a>
+  </mat-sidenav>
+</mat-sidenav-container>

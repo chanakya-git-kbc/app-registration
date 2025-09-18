@@ -1,27 +1,74 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  /* pushes left and right apart */
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  background: #f8f9fa;
-  border-bottom: 1px solid #ddd;
+.sidenav-container {
+  height: 100vh;
 }
 
-.nav-left a,
-.nav-right a {
-  margin-right: 15px;
+.toolbar-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.desktop-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.desktop-menu a {
+  color: #333;
+  margin-left: 10px;
   text-decoration: none;
+  font-weight: 500;
+}
+
+.desktop-menu a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
   color: #007bff;
 }
 
-.nav-left a.active,
-.nav-right a.active {
-  font-weight: bold;
-  color: #000;
+.menu-button {
+  display: none;
 }
 
-.nav-right a {
-  margin-right: 0;
+@media (max-width: 600px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+
+  .mobile-menu {
+    width: 250px;
+    background: #fff;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .mobile-menu a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .mobile-menu a.active {
+    font-weight: bold;
+    color: #007bff;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
 }
